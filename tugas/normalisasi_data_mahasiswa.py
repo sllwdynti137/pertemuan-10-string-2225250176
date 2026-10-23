@@ -1,0 +1,25 @@
+def normalisasi_nama(nama):
+    return " ".join(nama.strip().split()).title()
+
+
+def buat_inisial(nama):
+    kata = normalisasi_nama(nama).split()
+    return "".join(k[0] for k in kata)
+
+
+def normalisasi_kode(kode):
+    return "-".join(kode.strip().upper().split())
+
+
+nama = input("Nama mahasiswa: ")
+kode = input("Kode kelas: ")
+
+nama_bersih = normalisasi_nama(nama)
+kode_bersih = normalisasi_kode(kode)
+jumlah_kata = len(nama_bersih.split())
+inisial = buat_inisial(nama_bersih)
+
+print(f"Nama bersih : {nama_bersih}")
+print(f"Kode kelas  : {kode_bersih}")
+print(f"Jumlah kata : {jumlah_kata}")
+print(f"Inisial     : {inisial}")
